@@ -1,0 +1,25 @@
+.searchRow {
+	position: fixed;
+    top: 110px;
+}
+.searchRow .input-group-btn button {
+	background-color: #ECDF9D;
+    width: 25rem;
+    height: 8rem;
+    font-size: 5rem;
+    color: #424;
+}
+.searchRow input {
+	font-size: 5rem;
+    height: 8rem;
+}
+.wrapResults {
+	position: relative;
+	top: 140px;
+}
+.wrapResults .row {
+	margin-bottom: 20px;
+}
+.wrapResults .row img {
+	display: inline-block;
+}

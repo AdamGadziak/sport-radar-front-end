@@ -1,0 +1,14 @@
+var express = require('express');
+var app = express();
+var path = require('path');
+app.use(express.static('./'));
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/index.html'));
+});
+
+
+
+var port = Number(process.env.PORT || 3000);
+app.listen(port);
+console.log(port + ' front-end side');
+console.log(' check htttp://localhost:' + port);
