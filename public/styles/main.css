@@ -7,6 +7,7 @@ body {
       font: 20px Montserrat, sans-serif;
       line-height: 1.8;
       color: #f5f6f7;
+      overflow-x: hidden;
   }
   p {font-size: 2.4rem;}
   .margin {margin-bottom: 45px;}

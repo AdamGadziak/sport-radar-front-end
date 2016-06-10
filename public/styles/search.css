@@ -1,6 +1,7 @@
 .searchRow {
-	position: fixed;
-    top: 110px;
+    position: fixed;
+    top: 82px;
+    z-index: 3;
 }
 .searchRow .input-group-btn button {
 	background-color: #ECDF9D;
@@ -14,12 +15,25 @@
     height: 8rem;
 }
 .wrapResults {
-	position: relative;
-	top: 140px;
+	position: static;
+    margin-top: 100px;
+    margin-bottom: 113px;
 }
 .wrapResults .row {
 	margin-bottom: 20px;
 }
 .wrapResults .row img {
 	display: inline-block;
+}
+.wrapData {
+	width: 100%;
+}
+.wrapResults img {
+	width: 100%;
+	height: 100%;
+}
+.wrapData .data {
+	display: block;
+	color: black;
+    border-bottom: 2px solid black;
 }
