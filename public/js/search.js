@@ -22,8 +22,8 @@ function get(target, id, gameid, property) {
 	        response = xhr.responseText;
 			var bodyResponse = JSON.parse(response);
 			results[gameid][target + property] = bodyResponse[property];
-			if (target === "cities" && gameid === last) {
-				generate();
+			if (target === "cities" && gameid === last - 1) {
+				setTimeout(generate,500);
 			}
 	    }
 	}
@@ -50,6 +50,7 @@ function search(res) {
 		var slots = games[+game].slots,
 			cityID = games[+game].city,
 			courtID = games[+game].court;
+		last++;
 		get("courts", courtID, +game, "image");
 		get("courts", courtID, +game, "name");
 		get("cities", cityID, +game, "name");
@@ -57,7 +58,6 @@ function search(res) {
 			slots: slots
 		}
 		results.push(tmp);
-		last++;
 	}
 }
 getGames();
@@ -79,12 +79,12 @@ function _createElement( str ) {
 // 	return tmp;
 var template = "<div class='row'><div class='col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12'><div class='row'><div class='col-lg-6'><img src='http://cdn.bleacherreport.net/images_root/slides/photos/001/162/166/rucker_display_image.jpg?1312610824'></div><div class='col-lg-6'><div class='wrapData'><div class='data' id='cityName'><span>City</span><p>Wrocław</p></div><div class='data' id='courtName'><span>Court</span><p>Rucker Park</p></div><div class='data' id='slots'><span>Slots</span><p>10</p></div></div></div></div></div></div>"
 function generate() {
-	debugger;
 	var target = document.querySelector(".wrapResults"),
 		fragment = document.createDocumentFragment();
 	for (var i = 0; i < 10; i++) {
 		var tmpElement = _createElement(template);
 		console.log(tmpElement.querySelector("img"));
+		tmpElement.querySelector("img").src = results[i]["courtsimage"];
 		fragment.appendChild(tmpElement);
 	}
 	target.appendChild(fragment);
