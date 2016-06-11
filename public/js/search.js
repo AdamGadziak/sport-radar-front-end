@@ -1,4 +1,5 @@
-const base = "http://localhost:3333/api/v1/";
+// const base = "http://localhost:3333/api/v1/";
+const base = "https://sport-radar-rest-api.herokuapp.com/api/v1/"
 var results = [];
 var last = 0;
 function getGames() {
