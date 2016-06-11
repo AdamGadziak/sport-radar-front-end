@@ -78,3 +78,13 @@ footer {
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
+div.info {
+    position: relative;
+    top: -350px;
+    width: 67.1%;
+    height: 440px;
+    background-color: grey;
+    margin: 0 auto;
+    text-align: center;
+    padding: 120px;
+}
