@@ -1,1 +1,0 @@
-import restful from '/node_modules/restful.js/dist/restful.js'
