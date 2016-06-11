@@ -52,7 +52,7 @@ function search(res) {
 			cityID = games[+game].city,
 			courtID = games[+game].court;
 		last++;
-		get("courts", courtID, +game, "image");
+		get("courts", courtID, +game, "thumbnail");
 		get("courts", courtID, +game, "name");
 		get("cities", cityID, +game, "name");
 		var tmp = {
@@ -82,10 +82,13 @@ var template = "<div class='row'><div class='col-lg-6 col-lg-offset-3 col-md-6 c
 function generate() {
 	var target = document.querySelector(".wrapResults"),
 		fragment = document.createDocumentFragment();
-	for (var i = 0; i < 10; i++) {
+	target.innerHTML = "";
+	for (var i = 0; i < 7; i++) {
 		var tmpElement = _createElement(template);
 		console.log(tmpElement.querySelector("img"));
-		tmpElement.querySelector("img").src = results[i]["courtsimage"];
+		tmpElement.querySelector("img").src = results[i]["courtsthumbnail"];
+		tmpElement.querySelector("#cityName p").innerHTML = results[i]["citiesname"];
+		tmpElement.querySelector("#courtName p").innerHTML =results[i]["courtsname"];
 		fragment.appendChild(tmpElement);
 	}
 	target.appendChild(fragment);
